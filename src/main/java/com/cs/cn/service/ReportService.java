@@ -1,0 +1,9 @@
+package com.cs.cn.service;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+
+public interface ReportService {
+    public File downloadSupports(Long agentId, Long customerId, String state, String supportType, Date startDate, Date endDate) throws IOException;
+}
