@@ -5,10 +5,15 @@ import com.cs.cn.constans.ServerConstants;
 import com.cs.cn.model.Agent;
 import com.cs.cn.service.AgentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = ServerConstants.CLIENT_FRONTEND)
@@ -43,6 +48,28 @@ public class AgentController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PostMapping("/upload")
+    public Map<String, String> uploadPhoto(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("agentId") Long id) {
+        return agentService.uploadAgentPhoto(file,id);
+    }
+
+    @GetMapping("/userPhoto/{fileName:.+}")
+    public ResponseEntity<Resource> getUserPhoto(@PathVariable String fileName) {
+        try {
+            Resource file = agentService.getAgentPhoto(fileName);
+            String contentType = Files.probeContentType(file.getFile().toPath());
+            return ResponseEntity
+                    .ok()
+                    .header(HttpHeaders.CONTENT_TYPE, contentType)
+                    .body(file);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
     }
 
 }

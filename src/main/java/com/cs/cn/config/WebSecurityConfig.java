@@ -31,7 +31,7 @@ public class WebSecurityConfig {
                 .requestMatchers(
                         ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION + "/authenticate",
                         ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION + "/recover",
-                        ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_FILES + "/userPhoto/**")
+                        ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AGENT+ "/userPhoto/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
