@@ -69,7 +69,6 @@ public class AgentController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
     }
 
 }
