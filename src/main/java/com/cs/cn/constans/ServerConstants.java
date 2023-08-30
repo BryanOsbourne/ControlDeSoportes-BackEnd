@@ -20,5 +20,5 @@ public final class ServerConstants {
     public static final String PREFIX_CLIENT_ERROR = "";
     public static final String STATE_ACTIVE = "1";
     public static final String STATE_INACTIVE = "0";
-    public static final String CLIENT_FRONTEND = "http://localhost:4200/";
+    public static final String CLIENT_FRONTEND = "*";
 }
