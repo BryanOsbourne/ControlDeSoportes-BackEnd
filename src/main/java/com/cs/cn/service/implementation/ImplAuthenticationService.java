@@ -32,7 +32,7 @@ public class ImplAuthenticationService implements AuthenticationService {
             agent.setPassword(password);
             return agentRepository.save(agent);
         } else {
-            request.setPhoto("http://localhost:8080/v1/app-ticket-trace/files/userPhoto/userdefault.png");
+            request.setPhoto("http://localhost:8080/v1/app-ticket-trace/agents/userPhoto/logo.png");
             request.setPassword(passwordEncoder.encode("12345"));
             return agentRepository.save(request);
         }

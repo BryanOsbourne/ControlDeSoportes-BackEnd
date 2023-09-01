@@ -26,6 +26,7 @@ public class SupportController {
 
     @PostMapping("/save")
     public ResponseEntity<Support> save(@RequestBody Support support) {
+        LOGGER.info("---> {}",support);
         try {
             return new ResponseEntity(supportService.save(support), HttpStatus.CREATED);
         } catch (Exception e) {
