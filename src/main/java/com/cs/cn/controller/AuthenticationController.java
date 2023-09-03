@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = ServerConstants.CLIENT_FRONTEND)
 @RequestMapping(ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION)
 public class AuthenticationController {
-    
     @Autowired
     private AuthenticationService authenticationService;
-    
+
     private final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
 
     @PostMapping("/create")

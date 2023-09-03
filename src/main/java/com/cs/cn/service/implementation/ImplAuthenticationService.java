@@ -74,8 +74,10 @@ public class ImplAuthenticationService implements AuthenticationService {
                 .build();
     }
     @Override
+    @Transactional
     public Boolean recover(String username) {
         Agent agent = agentRepository.findByUsername(username).orElse(null);
+        System.out.println(agent.getUsername());
         if (agent != null) {
             agent.setPassword(passwordEncoder.encode("12345"));
             agent.setState(false);
