@@ -34,4 +34,7 @@ public class DetailReport implements Serializable {
 
     private String observation;
 
+    @OneToOne(mappedBy = "detailReport")
+    private BugReport bugReport;
+
 }
