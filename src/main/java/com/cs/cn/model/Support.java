@@ -23,7 +23,7 @@ public class Support implements Serializable {
     private LocalDate startDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 25)
-    private String startTime;
+    private LocalTime startTime;
 
     @ManyToOne
     @JoinColumn(name = EntitySupportConstans.COL_NAME_AGENT_ID)
@@ -52,7 +52,7 @@ public class Support implements Serializable {
     private LocalDate endDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_END_TIME, length = 25)
-    private String endTime;
+    private LocalTime endTime;
 
     @Column(name = EntitySupportConstans.COL_NAME_STATE, length = 25)
     private String state;
