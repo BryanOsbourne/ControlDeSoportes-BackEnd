@@ -25,11 +25,11 @@ public class Support implements Serializable {
     @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 25)
     private String startTime;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = EntitySupportConstans.COL_NAME_AGENT_ID)
     private Agent agent;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = EntitySupportConstans.COL_NAME_CUSTOMER_ID)
     private Customer customer;
 
