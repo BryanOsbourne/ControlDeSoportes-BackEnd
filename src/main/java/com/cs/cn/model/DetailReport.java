@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@Table(name = "detailReport")
 public class DetailReport implements Serializable {
 
     @Id
