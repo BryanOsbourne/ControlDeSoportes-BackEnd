@@ -5,6 +5,8 @@ import com.cs.cn.constans.EntitySupportConstans;
 import com.cs.cn.model.Agent;
 import com.cs.cn.model.Support;
 import com.cs.cn.model.LogSupport;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -48,7 +50,7 @@ public class ImplLogSupportService implements LogSupportService {
         return logSupportRepository.findBySupport(support);
     }
     @Override
-    public List<LogSupport> findByCriterias(Long agentId, Long supportId, Date startDate, Date endDate) {
+    public List<LogSupport> findByCriterias(Long agentId, Long supportId, LocalDate startDate, LocalDate endDate) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<LogSupport> query = criteriaBuilder.createQuery(LogSupport.class);
         Root<LogSupport> rootLogSupport = query.from(LogSupport.class);

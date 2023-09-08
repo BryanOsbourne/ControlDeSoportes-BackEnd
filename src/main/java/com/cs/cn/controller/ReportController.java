@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.io.File;
+import java.time.LocalDate;
 import java.util.Date;
 
 //https://www.youtube.com/watch?v=iiqaidp6RkI&ab_channel=ACADEMIAFULLSTACK
@@ -32,8 +33,8 @@ public class ReportController {
             @RequestParam("customerId") Long customerId,
             @RequestParam("state") String state,
             @RequestParam("supportType") String supportType,
-            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date startDate,
-            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date endDate
+            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate endDate
     ) {
         try {
             File file = reportService.downloadSupports(agentId, customerId, state, supportType, startDate, endDate);

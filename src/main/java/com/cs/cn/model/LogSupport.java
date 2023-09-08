@@ -10,7 +10,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import lombok.Data;
 
 @Entity
@@ -24,7 +25,7 @@ public class LogSupport implements Serializable {
     private Long id;
 
     @Column(name = EntitySupportConstans.COL_NAME_START_DATE, length = 25)
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 25)
     private String startTime;
@@ -53,7 +54,7 @@ public class LogSupport implements Serializable {
     private String observation;
 
     @Column(name = EntitySupportConstans.COL_NAME_END_DATE, length = 25)
-    private Date endDate;
+    private LocalDate endDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_END_TIME, length = 25)
     private String endTime;

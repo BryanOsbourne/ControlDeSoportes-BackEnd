@@ -8,6 +8,8 @@ import com.cs.cn.model.Customer;
 import com.cs.cn.model.Support;
 import com.cs.cn.model.LogSupport;
 import com.cs.cn.repository.CustomerRepository;
+
+import java.time.LocalDate;
 import java.util.*;
 import com.cs.cn.service.SupportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,7 +82,7 @@ public class ImplSupportService implements SupportService {
     @Override
     @Transactional
     public List<Support> findByCriterias(
-            Long agentId, Long customerId, String state, String supportType, Date startDate, Date endDate) {
+            Long agentId, Long customerId, String state, String supportType, LocalDate startDate, LocalDate endDate) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Support> query = criteriaBuilder.createQuery(Support.class);
         Root<Support> rootSupport = query.from(Support.class);

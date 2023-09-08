@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
 import java.util.*;
 
 @Service
@@ -23,7 +24,7 @@ public class ImplReportService implements ReportService {
 
     @Override
     @Transactional
-    public File downloadSupports(Long agentId, Long customerId, String state, String supportType, Date startDate, Date endDate) {
+    public File downloadSupports(Long agentId, Long customerId, String state, String supportType, LocalDate startDate, LocalDate endDate) {
 
         List<Support> supports = supportService.findByCriterias(agentId, customerId, state, supportType, startDate, endDate);
 

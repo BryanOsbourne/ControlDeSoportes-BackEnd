@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.cs.cn.service.LogSupportService;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -51,8 +53,8 @@ public class LogSupportController {
     public ResponseEntity<List<LogSupport>> findByCriterias(
             @RequestParam("agentId") Long agentId,
             @RequestParam("supportId") Long supportId,
-            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date startDate,
-            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date endDate) {
+            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate endDate) {
         try {
             return new ResponseEntity<>(logSupportService.findByCriterias(
                     agentId, supportId, startDate, endDate), HttpStatus.OK);

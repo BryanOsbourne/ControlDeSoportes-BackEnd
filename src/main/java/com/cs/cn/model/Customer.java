@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import lombok.Data;
 
@@ -32,7 +32,7 @@ public class Customer extends Person implements Serializable {
     private String bussinesName;
 
     @Column(name = EntityCustomerConstans.COL_NAME_VERSION, length = 25)
-    private Date version;
+    private LocalDate version;
 
     @JsonIgnore
     @OneToMany(mappedBy = EntityCustomerConstans.TAB_NAME_CUSTOMER, fetch = FetchType.LAZY)

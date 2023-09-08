@@ -1,6 +1,8 @@
 package com.cs.cn.service;
 
 import com.cs.cn.model.Support;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,5 +14,5 @@ public interface SupportService {
     public ArrayList<Support> findAll();
     public ArrayList<Support> findByCustomer(Long customerId);
     public List<Support> findByCriterias(
-            Long agentId, Long customerId, String state, String supporType, Date startDate, Date endDate);
+            Long agentId, Long customerId, String state, String supporType, LocalDate startDate, LocalDate endDate);
 }

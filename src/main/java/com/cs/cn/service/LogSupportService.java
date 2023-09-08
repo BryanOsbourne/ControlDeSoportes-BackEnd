@@ -1,6 +1,8 @@
 package com.cs.cn.service;
 
 import com.cs.cn.model.LogSupport;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,5 +13,5 @@ public interface LogSupportService {
     public Optional<LogSupport> findById(Long id);
     public ArrayList<LogSupport> findAllBySupport(Long supportId);
     public List<LogSupport> findByCriterias(
-            Long agent, Long supportId, Date startDate, Date endDate);
+            Long agent, Long supportId, LocalDate startDate, LocalDate endDate);
 }

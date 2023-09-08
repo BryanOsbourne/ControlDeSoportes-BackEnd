@@ -4,7 +4,8 @@ import com.cs.cn.constans.EntitySupportConstans;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import lombok.Data;
 
@@ -19,7 +20,7 @@ public class Support implements Serializable {
     private Long id;
 
     @Column(name = EntitySupportConstans.COL_NAME_START_DATE, length = 25)
-    private Date startDate;
+    private LocalDate startDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 25)
     private String startTime;
@@ -48,7 +49,7 @@ public class Support implements Serializable {
     private String observation;
 
     @Column(name = EntitySupportConstans.COL_NAME_END_DATE, length = 25)
-    private Date endDate;
+    private LocalDate endDate;
 
     @Column(name = EntitySupportConstans.COL_NAME_END_TIME, length = 25)
     private String endTime;
