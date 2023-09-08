@@ -18,7 +18,7 @@ public class BugReport implements Serializable {
 
     private LocalDateTime dateReport;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = EntitySupportConstans.COL_NAME_AGENT_ID)
     private Agent agent;
 
@@ -32,7 +32,7 @@ public class BugReport implements Serializable {
     @JoinColumn(name = "detailReportId")
     private DetailReport detailReport;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "formModuleId")
     private FormModul formModul;
 
