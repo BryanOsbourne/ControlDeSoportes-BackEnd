@@ -53,8 +53,8 @@ public class LogSupportController {
     public ResponseEntity<List<LogSupport>> findByCriterias(
             @RequestParam("agentId") Long agentId,
             @RequestParam("supportId") Long supportId,
-            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate startDate,
-            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDate endDate) {
+            @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+            @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
         try {
             return new ResponseEntity<>(logSupportService.findByCriterias(
                     agentId, supportId, startDate, endDate), HttpStatus.OK);
