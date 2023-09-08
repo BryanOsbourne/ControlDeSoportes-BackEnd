@@ -36,7 +36,7 @@ public class BugReport implements Serializable {
     @JoinColumn(name = "formModuleId")
     private FormModul formModul;
 
-    @OneToOne(mappedBy = "bugReport")
+    @OneToOne(mappedBy = "bugReport", cascade = CascadeType.ALL)
     private BugSolution bugSolution;
 
 }
