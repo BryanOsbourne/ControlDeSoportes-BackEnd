@@ -32,7 +32,7 @@ public class BugReport implements Serializable {
     @JoinColumn(name = "detailReportId")
     private DetailReport detailReport;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "formModuleId")
     private FormModul formModul;
 
