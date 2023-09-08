@@ -21,4 +21,7 @@ public class FormModul implements Serializable {
     @JoinColumn(name = "modulId")
     private Modul modul;
 
+    @OneToMany(mappedBy="formModul")
+    private List<BugReport> bugReports;
+
 }
