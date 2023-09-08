@@ -28,12 +28,15 @@ public class BugReport implements Serializable {
 
     private Boolean status;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "detailReportId")
     private DetailReport detailReport;
 
     @ManyToOne
     @JoinColumn(name = "formModuleId")
     private FormModul formModul;
+
+    @OneToOne(mappedBy = "bugReport")
+    private BugSolution bugSolution;
 
 }
