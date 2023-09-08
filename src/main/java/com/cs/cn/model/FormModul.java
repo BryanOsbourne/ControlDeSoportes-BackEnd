@@ -17,7 +17,7 @@ public class FormModul implements Serializable {
     @Column(name = "nameFormModul")
     private String nameFormModul;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "modulId")
     private Modul modul;
 
