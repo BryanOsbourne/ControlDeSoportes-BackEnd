@@ -16,17 +16,18 @@ public class BugSolution implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = EntitySupportConstans.COL_NAME_AGENT_ID)
     private Agent agent;
 
-    private Date dateSolution;
+    private LocalDateTime dateSolution;
 
     private String attachments;
 
     private String observation;
 
-    @OneToOne()
+    @OneToOne
+    @JoinColumn(name = "bugReportId")
     private BugReport bugReport;
     
 }
