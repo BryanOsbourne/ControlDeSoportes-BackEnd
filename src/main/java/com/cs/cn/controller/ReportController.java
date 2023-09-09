@@ -14,10 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.time.LocalDate;
-import java.util.Date;
-
-//https://www.youtube.com/watch?v=iiqaidp6RkI&ab_channel=ACADEMIAFULLSTACK
-//https://github.com/ctucnoc/app-biblioteca/blob/main/src/main/java/com/pe/crce/biblioteca/constant/BibliotecaConstant.java
 
 @RestController
 @CrossOrigin(origins = ServerConstants.CLIENT_FRONTEND)

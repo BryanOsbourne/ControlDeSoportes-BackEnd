@@ -4,7 +4,7 @@ import com.cs.cn.constans.EntitySupportConstans;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
