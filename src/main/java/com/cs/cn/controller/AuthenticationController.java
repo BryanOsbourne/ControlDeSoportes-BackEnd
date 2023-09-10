@@ -23,6 +23,7 @@ public class AuthenticationController {
     private final Logger LOGGER = LoggerFactory.getLogger(AuthenticationController.class);
 
     @PostMapping("/create")
+    @PreAuthorize("hasRole('ROLE_ADMINISTRADOR')")
     public ResponseEntity<Agent> create(@RequestBody Agent agent) {
         try {
             return new ResponseEntity<>(authenticationService.create(agent), HttpStatus.CREATED);
