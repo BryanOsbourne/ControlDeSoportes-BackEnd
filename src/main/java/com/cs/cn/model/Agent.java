@@ -14,12 +14,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = EntityAgentConstants.TAB_NAME_AGENT)
 @Builder
+@Entity
 public class Agent extends Person implements UserDetails {
 
     @Id
@@ -32,7 +32,7 @@ public class Agent extends Person implements UserDetails {
     private String username;
 
     @NotEmpty
-    @Column(name = EntityAgentConstants.COL_NAME_PASSWORD, length = 100)
+    @Column(name = EntityAgentConstants.COL_NAME_PASSWORD)
     private String password;
 
     @Column(name = EntityAgentConstants.COL_NAME_PHOTO)
@@ -46,6 +46,7 @@ public class Agent extends Person implements UserDetails {
     private Role role;
 
     @Override
+    @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
@@ -83,5 +84,5 @@ public class Agent extends Person implements UserDetails {
     public boolean isEnabled() {
         return super.getState();
     }
-    
+
 }

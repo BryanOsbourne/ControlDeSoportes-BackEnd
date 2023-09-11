@@ -30,7 +30,6 @@ public class WebSecurityConfig {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-           //     .requestMatchers(ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION + "/create").hasRole("ADMINISTRADOR")
                 .requestMatchers(
                         ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION + "/authenticate",
                         ApplicationConstants.APPLICATION_TICKET_TRACE + ApplicationConstants.RESOURCE_AUTHENTICATION + "/recover",

@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.Data;
@@ -18,7 +17,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = EntityCustomerConstans.TAB_NAME_CUSTOMER)
-public class Customer extends Person implements Serializable {
+public class Customer extends Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +30,7 @@ public class Customer extends Person implements Serializable {
     @Column(name = EntityCustomerConstans.COL_NAME_BUSINESS_NAME, length = 50)
     private String bussinesName;
 
-    @Column(name = EntityCustomerConstans.COL_NAME_VERSION, length = 25)
+    @Column(name = EntityCustomerConstans.COL_NAME_VERSION, length = 20)
     private LocalDate version;
 
     @JsonIgnore

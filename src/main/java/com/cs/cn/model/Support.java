@@ -12,17 +12,17 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = EntitySupportConstans.TAB_NAME_SUPPORT)
-public class Support implements Serializable {
+public class Support {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = EntitySupportConstans.COL_NAME_ID)
     private Long id;
 
-    @Column(name = EntitySupportConstans.COL_NAME_START_DATE, length = 25)
+    @Column(name = EntitySupportConstans.COL_NAME_START_DATE, length = 20)
     private LocalDate startDate;
 
-    @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 25)
+    @Column(name = EntitySupportConstans.COL_NAME_START_TIME, length = 20)
     private LocalTime startTime;
 
     @ManyToOne
@@ -33,28 +33,28 @@ public class Support implements Serializable {
     @JoinColumn(name = EntitySupportConstans.COL_NAME_CUSTOMER_ID)
     private Customer customer;
 
-    @Column(name = EntitySupportConstans.COL_NAME_SUPPORT_TYPE, length = 50)
+    @Column(name = EntitySupportConstans.COL_NAME_SUPPORT_TYPE, length = 20)
     private String supportType;
 
-    @Column(name = EntitySupportConstans.COL_NAME_CONTACT, length = 50)
+    @Column(name = EntitySupportConstans.COL_NAME_CONTACT, length = 20)
     private String contact;
 
     @Column(name = EntitySupportConstans.COL_NAME_PHONE, length = 50)
     private String phone;
 
-    @Column(name = EntitySupportConstans.COL_NAME_DETAIL, length = 500)
+    @Column(name = EntitySupportConstans.COL_NAME_DETAIL, length = 254)
     private String detail;
 
-    @Column(name = EntitySupportConstans.COL_NAME_OBSERVATION, length = 500)
+    @Column(name = EntitySupportConstans.COL_NAME_OBSERVATION, length = 254)
     private String observation;
 
-    @Column(name = EntitySupportConstans.COL_NAME_END_DATE, length = 25)
+    @Column(name = EntitySupportConstans.COL_NAME_END_DATE, length = 20)
     private LocalDate endDate;
 
-    @Column(name = EntitySupportConstans.COL_NAME_END_TIME, length = 25)
+    @Column(name = EntitySupportConstans.COL_NAME_END_TIME, length = 20)
     private LocalTime endTime;
 
-    @Column(name = EntitySupportConstans.COL_NAME_STATE, length = 25)
+    @Column(name = EntitySupportConstans.COL_NAME_STATE, length = 20)
     private String state;
 
     @JsonIgnore
